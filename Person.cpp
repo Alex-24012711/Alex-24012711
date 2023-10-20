@@ -1,27 +1,41 @@
 #include<iostream>
-#include<math.h>5
+#include<cmath>
 
-using namespace std;
+class QuadraticEquation {
+private:
+    double a, b, c;
+public:
+    void input() {
+        std::cout << "Enter coefficient a: ";
+        std::cin >> a;
+        std::cout << "Enter coefficient b: ";
+        std::cin >> b;
+        std::cout << "Enter coefficient c: ";
+        std::cin >> c;
+    }
 
-int main(){
-  float a,b,c,x,x1,x2,delta;
-  cin>>a>>b>>c;
-  delta=(b*b)-(4*a*c);
-  if(delta<0){
-    cout<<"Phuong trinh vo nghiem"<<endl;
-  }
-  else if(delta==0){
-    x=(-b)/(2*a);
-     cout<<"Phuong trinh co nghiem kep"<<endl;
-  }
-  else {
-    delta=sqrt(delta);
-    cout<<"Phuong trinh co 2 nghiem phan biet" <<endl;
-    x1 = (-b + delta) / (2*a);
-		x2 = (-b - delta) / (2*a);
-    cout<<"x1="<<x1<<endl;
-    cout<<"x2="<<x2<<endl;
-  }
-  return 0;
+    void solve() {
+        if (a == 0) {
+            std::cout << "This is not a quadratic equation.\n";
+        } else {
+            double delta = b * b - 4 * a * c;
+            if (delta < 0) {
+                std::cout << "The equation has no real roots.\n";
+            } else if (delta == 0) {
+                double x = -b / (2 * a);
+                std::cout << "The equation has one root: " << x << "\n";
+            } else {
+                double x1 = (-b + sqrt(delta)) / (2 * a);
+                double x2 = (-b - sqrt(delta)) / (2 * a);
+                std::cout << "The equation has two roots: " << x1 << " and " << x2 << "\n";
+            }
+        }
+    }
+};
 
+int main() {
+    QuadraticEquation eq;
+    eq.input();
+    eq.solve();
+    return 0;
 }
