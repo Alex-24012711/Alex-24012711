@@ -30,7 +30,6 @@ public:
 // Lớp Circle kế thừa từ Shape
 class Circle : public Shape {
 private:
-    double r;
 public:
     void input() override {
         cout << "Moi ban nhap ban kinh hinh tron ";
