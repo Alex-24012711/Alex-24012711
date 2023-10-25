@@ -21,7 +21,7 @@ class NhanVien{
         cout<<"Ho ten:";
         cout<<this->hoTen<<endl;
     }
-    virtual void tinhLuong()=0;
+    virtual void tinhLuong()=0; // phương thức thuần ảo của lớp NhanhVien
 };
 class NhanVienSanXuat : public NhanVien
 {
@@ -29,7 +29,7 @@ class NhanVienSanXuat : public NhanVien
     int soSanPham;
     float tienCong1SP;
     public:
-    NhanVienSanXuat(): NhanVien()
+    NhanVienSanXuat(): NhanVien()  // <- Thể hiện tính đa hình trong C++
     {
         this->soSanPham=0;
         this->tienCong1SP=0;
@@ -50,12 +50,12 @@ class NhanVienSanXuat : public NhanVien
         cout<<"Luong: ";
         cout<<this->luong<<endl;
     }
-    void tinhLuong(){
+    void tinhLuong(){ 
         this->luong=this->soSanPham*this->tienCong1SP;
     }
 
 };
-class NhanVienVanPhong : public NhanVien
+class NhanVienVanPhong : public NhanVien  // <- Thể hiện tính đa hinh trong C++
 {
 private:
     float luongCoBan;
