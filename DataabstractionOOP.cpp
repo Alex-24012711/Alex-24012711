@@ -5,10 +5,10 @@ using namespace std;
 // Vì Lớp trừu tượng giúp cho giao diện người dùng đơn giản hơn, ẩn các đoạn mã code phức tạp, thuận tiện cho việc bảo trì và cập nhập phần mềm dễ dàng hơn 
 
 
-class Animal{ // lớp trừu tượng 
-    virtual void phatAm()=0;
-};
-class Dog: public Animal{
+class Animal{ //Đây là lớp trừu tượng
+    virtual void phatAm()=0; //<- Tính trừu tượng ở đây. 
+    };
+class Dog: public Animal{ // 
     public: 
      void phatAm(){
         cout<<"Gau gau"<<endl;
